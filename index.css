@@ -1,0 +1,46 @@
+:root {
+    --text-color: #dff0ec;
+    --fight-btn-color: #1c753a;
+    --border-color: #585b5d;
+    --escape-btn-color: #9d3520;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body{
+    height: 100%;
+    width: 100%;
+  }
+
+  .flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button{
+    border: solid 2px;
+    border-radius: 10%;
+  }
+
+  #fight{
+    color: #b5c1be;
+  }
+  #flee{
+    color:#b5c1be;
+  }
+
+  .flex-str{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+  }
+
+  .ship{
+    position: absolute;
+  }
+
+
