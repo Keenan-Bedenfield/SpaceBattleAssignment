@@ -1,0 +1,173 @@
+console.log("Space Battle active")
+
+
+//AN EARTH SYSTEM STARSHIP
+
+class Ship {
+    constructor (
+        name, 
+        firepower, 
+        hull,
+        accuracy,
+        ){
+            this.name = name,
+            this.firepower = firepower,
+            this.hull = hull,
+            this.accuracy = accuracy
+        }
+    attack(enemy) { 
+        if (Math.random() < enemyShip.accuracy) {
+             //removing alien from the array (only if hit and killed ).
+            if (enemyShip.hull < me.hull) {
+                console.log(`The ${enemyShip.name} is hit!`);
+            }
+            console.log(enemyShip.hull -= this.hull);
+            this.victory()
+        }else if (Math.random() > me.accuracy) {
+             console.log("The Assembly is hit");
+        }else (me.hull % 0 === 0);{
+            this.defeated()
+        }
+    
+    }
+
+    flee(){
+        console.log("Game Over.");
+    }
+
+    defeated(){
+        if (me.hull % 0 == 0) {
+            console.log("Arrgh... Abadon ship!")
+        }
+    } 
+// if all enemy shps are dead & if use array im still alive (use array.legnth)//
+    victory(){
+        if (enemyShip.hull === 0 );
+        console.log("You Win!")
+    }
+};
+
+// MY SHIP INSTANCE
+const me = new Ship ( "USS assembly", 3, 5, .7);
+
+// ENEMY SHIP INSTANCE
+const enemyShip = new Ship ("Tuvid", 3, 6, .7)
+// console.log(EnemyShip)
+// me.attack(EnemyShip)
+
+//THE ALIEN ARMADA
+class AlienShip extends Ship {
+    constructor(name, firepower, hull, accuracy) {
+        super(name, firepower, hull, accuracy);
+    }
+        
+    // METHODS
+    shoot(me){
+         if (Math.random() < me[0].accuracy) {
+            console.log('The Assembly is hit!');
+            me.hull -= this.hull
+        }
+    }
+
+    evades(){
+        if(me.accuracy > this.accuracy) {
+            console.log('The Assembly missed!');
+        }
+    }
+
+    smite(){
+        if(me.hull === 0);
+        console.log("The Assembly got destroyed!")
+    }
+
+    defeat(){
+        if(alienArray.length <= 0)
+        console.log("You lose!.")
+    }
+};
+
+
+//ALIEN SHIPS (Kryllarian Empire)
+
+const scout = new AlienShip ("Teseruk", 3, 2, .6);
+const starship = new AlienShip ("starship", 4, 3, .8);
+const sovereign = new AlienShip ("sovereign", 5, 3, .7);
+const galaxy = new AlienShip ("Valdeel", 5, 3, .7);
+const defiant = new AlienShip ("Murduk", 5, 4, .8);
+const nova = new AlienShip ("Neyari", 6, 4, .8);
+
+//Alien array
+const alienArray = [scout, starship, sovereign, galaxy, defiant, nova]
+
+//Fight/start the battle button
+const fightBtn = document.getElementById('fight');
+
+//Leave the  battle/Escape button
+const escapeBtn = document.getElementById('flee');
+
+
+fightBtn.addEventListener("click",() => {
+   return me.attack();
+});
+
+fightBtn.style.backgroundColor = "var(--fight-btn-color)";
+
+
+escapeBtn.addEventListener("click",() => {
+    me.flee();
+});
+
+escapeBtn.style.backgroundColor = "var(--escape-btn-color)";
+
+const title = document.getElementById('spaceBattle');
+title.classList.add('flex-ctr');
+
+const gameBox = document.getElementById('.box2')
+// gameBox.classList.add('flex-str')
+
+const ourShip  = document.querySelector('.ship');
+ourShip.style.border = '2px solid black';
+title.classList.add('.ship')
+
+
+
+
+
+
+
+//-----------notes-----------
+
+// class Example {
+// 	constructor(name){
+// 		this.name = name
+// 		this.method = this.method.bind(this)
+// 	}
+
+// 	methodFromExample(){
+// 	 return this.name
+// 	}
+// }
+
+//-------------
+
+// const btnEl = document.querySelector('button')
+
+//-------------
+
+// btnEl.addEventListener('click', methodFromExample)
+
+//------------
+
+//-------------
+ // trying to get a randomize ship from the array everytime the Engage Button is hit:
+
+//  fightBtn.addEventListener("click",() => {
+//     me.attack(alienArray[0]); 
+//     if ((me.accuracy < EnemyShip.accuracy));
+//     return EnemyShip.attack(me)
+// });
+//  alienArray[Math.floor((Math.random() * alienArray.length))];   
+
+
+    
+
